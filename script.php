@@ -8,7 +8,7 @@ $lengthParagraph = strlen($paragraph);
 //number of words in paragraph
 $wordsParagraph = explode(" ", $paragraph);
 
-
+$censoredParagraph = str_replace($badWord, "***", $paragraph);
 
 
 ?>
@@ -29,9 +29,25 @@ $wordsParagraph = explode(" ", $paragraph);
     <div class="container">
         <main>
             <div class="container">
-                <div>
+                <!--replace-text-->
+                <div>                    
                     <h3>Your text:</h3>
                     <p><?php echo $paragraph ?></p>
+                    <!--n-words-->
+                    <div class="fw-semibold">
+                        Number of words:
+                        <span class="fw-light"><?php echo count($wordsParagraph) ?></span>
+                    </div>
+                    <!--n-letters-->
+                    <div class="fw-semibold">
+                        Number of letters:
+                        <span class="fw-light"><?php echo $lengthParagraph ?></span>
+                    </div>
+                </div>
+                <!--replace-censured-text-->
+                <div>
+                    <h3>Your censured text:</h3>
+                    <p><?php echo $censoredParagraph ?></p>
                     <!--n-words-->
                     <div class="fw-semibold">
                         Number of words:
